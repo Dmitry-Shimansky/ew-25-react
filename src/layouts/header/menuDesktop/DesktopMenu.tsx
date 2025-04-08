@@ -42,7 +42,7 @@ export const HeaderMenu = () => {
 
 const StyledNav = styled.nav`
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     gap: 51px;
     height: 100%;
@@ -79,7 +79,7 @@ const Mask = styled.span`
     height: 50%;
     overflow: hidden;
     //outline: 1px solid red;
-    color: ${Theme.colors.font};
+    color: ${Theme.colors.mainTitle};
     transition: ${Theme.animations.transition};
     
     & + & {

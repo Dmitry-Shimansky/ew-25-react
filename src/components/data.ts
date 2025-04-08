@@ -104,19 +104,19 @@ export const worksItems: Works[] = [
 
 export const headerMenuItems: Array<{title: string, href: string}> = [
     {
-        title: "Home",
+        title: "Главная",
         href: "home"
     },
     {
-        title: "Tech Stack",
+        title: "Услуги",
         href: "techstack"
     },
     {
-        title: "Projects",
+        title: "Галерея",
         href: "projects"
     },
     {
-        title: "Contacts",
+        title: "Контакты",
         href: "contacts"
     }];
 
