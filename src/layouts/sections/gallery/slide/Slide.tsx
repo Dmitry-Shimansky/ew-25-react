@@ -12,6 +12,9 @@ import image3 from "../../../../assets/images/gallery/gallery-3.jpg"
 import image4 from "../../../../assets/images/gallery/gallery-4.jpg"
 import image5 from "../../../../assets/images/gallery/gallery-5.jpg"
 import image6 from "../../../../assets/images/gallery/gallery-6.jpg"
+import image7 from "../../../../assets/images/gallery/gallery-7.jpg"
+import image8 from "../../../../assets/images/gallery/gallery-8.jpg"
+import image9 from "../../../../assets/images/gallery/gallery-9.jpg"
 
 export const Slider = () => {
     return (
@@ -43,9 +46,22 @@ export const Slider = () => {
             <SwiperSlide>
                 <Slide src={image6} alt={"image-6"}/>
             </SwiperSlide>
+            <SwiperSlide>
+                <Slide src={image7} alt={"image-7"}/>
+            </SwiperSlide>
+            <SwiperSlide>
+                <Slide src={image8} alt={"image-8"}/>
+            </SwiperSlide>
+            <SwiperSlide>
+                <Slide src={image9} alt={"image-9"}/>
+            </SwiperSlide>
         </Swiper>
     )
 }
+
+const SwiperWrapper = styled.div`
+    
+`;
 
 const Slide = styled.img`
     

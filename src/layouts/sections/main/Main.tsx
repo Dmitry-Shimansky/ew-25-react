@@ -29,7 +29,7 @@ const StyledMain = styled.section`
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 60vh;
+    height: 50vh;
     
     &::before {
         position: absolute;
