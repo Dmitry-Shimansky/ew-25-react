@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import styled from "styled-components";
 import {Container} from "../../../components/Container.ts";
 import {SectionTitle} from "../../../components/SectionTitle.tsx";
@@ -68,10 +68,12 @@ const ItemWrapper = styled.div`
     cursor: pointer;
     scale: 1;
     
-    transition: scale 0.8s;
+    transition: scale 0.5s;
     
     &:hover {
-        scale: 1.1;
+        scale: 1.2;
+        z-index: 1;
+        box-shadow: 2px 2px 30px 0 rgb(244, 137, 21, 0.7);
     }
 `;
 

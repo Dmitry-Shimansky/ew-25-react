@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import styled from "styled-components";
 import {Theme} from "../../../styles/Theme";
 import {Container} from "../../../components/Container.ts";
@@ -11,7 +11,7 @@ export const Main = () => {
             <Container>
                 <MainWrapper>
                     <MainTitle>
-                        Запасные части и комплектующие для экскаваторной техники EW-25-M1 (Антей) и EC-22-K2 (Гидра)
+                        Запасные части и комплектующие для экскаваторной техники <br/> <span>EW-25-M1 (Антей)</span> и <span>EC-22-K2 (Гидра)</span>
                     </MainTitle>
                     <ButtonWrapper>
                         <Button>Оставить заявку</Button>
@@ -57,11 +57,20 @@ const MainWrapper = styled.div`
 
 const MainTitle = styled.h1`
     position: relative;
+    font-family: 'Exo 2', sans-serif;
     font-size: 42px;
     font-weight: 900;
     text-align: center;
     text-transform: uppercase;
     color: ${Theme.colors.mainTitle};
+    
+    span:last-child {
+        color: dodgerblue;
+    }
+    
+    span:nth-child(2) {
+        color: ${Theme.colors.accent};
+    }
 `;
 
 const ButtonWrapper = styled.div`

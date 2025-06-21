@@ -92,3 +92,11 @@ const Link = styled.a`
     line-height: 26px;
     letter-spacing: 0;
 `;
+
+export const S = {
+        StyledNav,
+        List,
+        Mask,
+        ListItem,
+        Link
+}

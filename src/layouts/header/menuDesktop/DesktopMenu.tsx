@@ -1,14 +1,26 @@
-import React from 'react';
+// import React from 'react';
 import styled from "styled-components";
 import {v4 as uuid} from 'uuid';
-import {headerSocialIcons, headerMenuItems} from "../../../components/data"
+import {headerMenuItems} from "../../../components/data"
 // import {HeaderSocialIcons} from "./HeaderSocialIcons";
 import {Theme} from "../../../styles/Theme";
 import {Link} from "react-scroll"
+import {useEffect, useState} from "react";
 
 export const HeaderMenu = () => {
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 0);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     return (
-        <StyledNav>
+        <StyledNav className={isScrolled ? 'scrolled' : ''}>
             <List>
                 {headerMenuItems.map((item) => {
                     return (
@@ -47,6 +59,13 @@ const StyledNav = styled.nav`
     gap: 51px;
     height: 100%;
     width: 100%;
+    transition: backdrop-filter 0.5s ease;
+
+    &.scrolled {
+        backdrop-filter: blur(10px);
+        //background-color: rgba(255, 255, 255, 0.8);
+        -webkit-backdrop-filter: blur(10px);
+    }
 
     @media ${Theme.media.desktop1100} {
         justify-content: space-between;

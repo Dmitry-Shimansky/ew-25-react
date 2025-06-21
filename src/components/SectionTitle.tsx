@@ -4,13 +4,12 @@ import {font} from "../styles/Common";
 
 
 export const SectionTitle = styled.h2`
-    ${font({weight: 700, Fmax: 48, Fmin: 30})}
+    ${font({family: 'Exo 2', weight: 400, Fmax: 35, Fmin: 20})}
     
     color: ${Theme.colors.sectionTitle};
-    //font-size: 48px;
-    //font-weight: 700;
     letter-spacing: 0;
     text-align: center;
+    text-transform: uppercase;
     margin-bottom: 49px;
     
     position: relative;

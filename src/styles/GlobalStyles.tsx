@@ -13,7 +13,7 @@ export const GlobalStyle = createGlobalStyle`
 
     body {
         margin: 0;
-        font-family: 'Poppins', 'DM Sans', 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        font-family: 'Poppins', 'Exo 2', 'DM Sans', 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
         'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
         sans-serif;
         -webkit-font-smoothing: antialiased;

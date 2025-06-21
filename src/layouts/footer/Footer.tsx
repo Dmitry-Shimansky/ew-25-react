@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import {Icon} from "../../components/icon/Icon";
 import {Container} from "../../components/Container";
 import {footerSocialIcons} from "../../components/data";

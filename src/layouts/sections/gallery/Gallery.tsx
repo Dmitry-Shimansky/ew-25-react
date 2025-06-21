@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import styled from "styled-components";
 import {Container} from "../../../components/Container.ts";
 import {Slider} from "./slide/Slide.tsx";
@@ -8,7 +8,7 @@ export const Gallery = () => {
     return (
         <StyledGallery>
             <Container>
-                <SectionTitle>ГАЛЕРЕЯ</SectionTitle>
+                <SectionTitle>Галерея</SectionTitle>
                 <Slider />
             </Container>
         </StyledGallery>

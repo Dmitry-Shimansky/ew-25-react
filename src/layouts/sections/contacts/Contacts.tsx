@@ -1,4 +1,4 @@
-import React, {ElementRef, useRef} from 'react';
+import {ElementRef, useRef} from 'react';
 import {SectionTitle} from "../../../components/SectionTitle";
 import {SectionDescription} from "../../../components/SectionDescription";
 import {Button} from "../../../components/Button";
@@ -17,21 +17,21 @@ export const Contacts = () => {
 
         if (!form.current) return;
 
-        emailjs
-            .sendForm('service_1n4hv6s', 'template_am47jhn', form.current, {
-                publicKey: '-aWeFRbWUAhKJr4lq',
-            })
-            .then(
-                () => {
-                    console.log('SUCCESS!');
-                    toast.success(`Message was sent successfully !`);
-                    e.target.reset();
-                },
-                (error) => {
-                    console.log('FAILED...', error.text);
-                    toast.error(`Message was NOT sent. Please try again.`);
-                },
-            );
+        // emailjs
+        //     .sendForm('service_1n4hv6s', 'template_am47jhn', form.current, {
+        //         publicKey: '-aWeFRbWUAhKJr4lq',
+        //     })
+        //     .then(
+        //         () => {
+        //             console.log('SUCCESS!');
+        //             toast.success(`Message was sent successfully !`);
+        //             e.target.reset();
+        //         },
+        //         (error) => {
+        //             console.log('FAILED...', error.text);
+        //             toast.error(`Message was NOT sent. Please try again.`);
+        //         },
+        //     );
     };
 
     return (
