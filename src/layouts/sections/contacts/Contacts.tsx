@@ -8,20 +8,20 @@ import {S} from "./Contacts_Styles";
 // import emailjs from "@emailjs/browser";
 // import {toast} from "react-toastify";
 
-const escapeHtml = (text: string) => {
-    const map: any = {
-        '&': '&amp;',
-        '<': '&lt;',
-        '>': '&gt;',
-        '"': '&quot;',
-        "'": '&#039;'
-    };
+// const escapeHtml = (text: string) => {
+//     const map: any = {
+//         '&': '&amp;',
+//         '<': '&lt;',
+//         '>': '&gt;',
+//         '"': '&quot;',
+//         "'": '&#039;'
+//     };
+//
+//     return text.replace(/[&<>"']/g, (m)=> map[m]);
+// }
 
-    return text.replace(/[&<>"']/g, (m)=> map[m]);
-}
-
-const token = "7916863625:AAETVJFkw2l7ZLbPnsLvPHBmC16CKhf6blY";
-const chatId = "-4832219875";
+const token = "";
+const chatId = "";
 
 export const Contacts = () => {
 
@@ -46,7 +46,7 @@ export const Contacts = () => {
                     },
                 );
         } catch (error) {
-            console.log('FAILED...', error.text);
+            console.log('FAILED...');
             // toast.error(`Message was NOT sent. Please try again.`);
             // throw new Error(error.message);
         }
