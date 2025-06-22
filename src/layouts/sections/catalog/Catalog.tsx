@@ -25,7 +25,7 @@ export const Catalog = () => {
     return (
         <StyledCatalog>
             <Container>
-                <SectionTitle>КАТАЛОГ</SectionTitle>
+                <SectionTitle>Каталог</SectionTitle>
                 <CatalogWrapper>
                     <ExpandableImage small={catalog1} large={big_catalog1} alt={"Гидрооборудование платформы поворотной"} className={s.image_wrapper}/>
                     <ExpandableImage small={catalog2} large={big_catalog2} alt={"Гидрооборудование рабочего оборудования"} className={s.image_wrapper}/>

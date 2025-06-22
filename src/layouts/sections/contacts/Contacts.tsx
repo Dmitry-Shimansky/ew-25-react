@@ -8,6 +8,21 @@ import {S} from "./Contacts_Styles";
 // import emailjs from "@emailjs/browser";
 // import {toast} from "react-toastify";
 
+const escapeHtml = (text: string) => {
+    const map: any = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#039;'
+    };
+
+    return text.replace(/[&<>"']/g, (m)=> map[m]);
+}
+
+const token = "7916863625:AAETVJFkw2l7ZLbPnsLvPHBmC16CKhf6blY";
+const chatId = "-4832219875";
+
 export const Contacts = () => {
 
     const form = useRef<ElementRef<'form'>>(null);
@@ -16,6 +31,25 @@ export const Contacts = () => {
         e.preventDefault();
 
         if (!form.current) return;
+
+        const formData = new FormData(form.current);
+        const data = Object.fromEntries(formData.entries());
+        console.log('Form submitted with:', data);
+
+        try {
+            fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${data.user_name}`)
+                .then(
+                    (response) => {
+                        console.log('SUCCESS!', response.json());
+                        // toast.success(`Message was sent successfully !`);
+                        e.target.reset();
+                    },
+                );
+        } catch (error) {
+            console.log('FAILED...', error.text);
+            // toast.error(`Message was NOT sent. Please try again.`);
+            // throw new Error(error.message);
+        }
 
         // emailjs
         //     .sendForm('service_1n4hv6s', 'template_am47jhn', form.current, {
@@ -37,17 +71,25 @@ export const Contacts = () => {
     return (
         <S.StyledContacts id={"contacts"}>
             <Container>
-                <SectionTitle>КОНТАКТЫ</SectionTitle>
-                <SectionDescription>Остались вопросы ?<br/> Добро пожаловать!</SectionDescription>
+                <SectionTitle>Контакты</SectionTitle>
+                <SectionDescription>Остались вопросы ?<br/> Будем рады на них ответить!</SectionDescription>
                 <S.ContactsWrapper >
-
-                    <Icon iconId={'man-standing'} width={'562px'} height={'411px'}/>
-
+                    <S.ContactsInfoWrapper>
+                        <S.EmailWrapper>
+                            <Icon iconId={'phone'} width={'29px'} height={'26px'} fill={'#000'}/>
+                            <S.Phone href={'tel:+79605557788'}>+7 (960) 555-77-88</S.Phone>
+                        </S.EmailWrapper>
+                        <S.EmailWrapper>
+                            <Icon iconId={'email'} width={'29px'} height={'26px'} fill={'#000'}/>
+                            <S.Email href={'mailto:gusi.Lebedi@gmail.com'}>gusi.Lebedi@gmail.com</S.Email>
+                        </S.EmailWrapper>
+                    </S.ContactsInfoWrapper>
                     <S.StyledForm ref={form} onSubmit={sendEmail}>
-                        <S.Field required placeholder={'name'} name={'user_name'}/>
+                        <S.Field required placeholder={'Имя'} name={'user_name'}/>
                         <S.Field required placeholder={'email'} name={'user_email'}/>
-                        <S.Field required placeholder={'message'} as={"textarea"} name={'message'}/>
-                        <Button type={'submit'}>Submit</Button>
+                        <S.Field required placeholder={'телефон'} name={'user_phone'}/>
+                        <S.Field placeholder={'Сообшение'} as={"textarea"} name={'message'}/>
+                        <Button type={'submit'}>Отправить</Button>
                     </S.StyledForm>
                 </S.ContactsWrapper>
             </Container>
