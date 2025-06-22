@@ -10,6 +10,16 @@ import catalog5 from "../../../assets/images/catalog/catalog-5.jpg"
 import catalog6 from "../../../assets/images/catalog/catalog-6.jpg"
 import catalog7 from "../../../assets/images/catalog/catalog-7.jpg"
 import catalog8 from "../../../assets/images/catalog/catalog-8.jpg"
+import big_catalog1 from "../../../assets/images/catalog/catalog-big/1.jpg"
+import big_catalog2 from "../../../assets/images/catalog/catalog-big/2.jpg"
+import big_catalog3 from "../../../assets/images/catalog/catalog-big/3.jpg"
+import big_catalog4 from "../../../assets/images/catalog/catalog-big/4.jpg"
+import big_catalog5 from "../../../assets/images/catalog/catalog-big/5.jpg"
+import big_catalog6 from "../../../assets/images/catalog/catalog-big/6.jpg"
+import big_catalog7 from "../../../assets/images/catalog/catalog-big/7.jpg"
+import big_catalog8 from "../../../assets/images/catalog/catalog-big/8.jpg"
+import {ExpandableImage} from "../../../components/ExpandableImage.tsx";
+import s from "./Catalog.module.css";
 
 export const Catalog = () => {
     return (
@@ -17,30 +27,14 @@ export const Catalog = () => {
             <Container>
                 <SectionTitle>КАТАЛОГ</SectionTitle>
                 <CatalogWrapper>
-                    <ItemWrapper>
-                        <Image src={catalog1} alt={"catalog-1"}/>
-                    </ItemWrapper>
-                    <ItemWrapper>
-                        <Image src={catalog2} alt={"catalog-2"}/>
-                    </ItemWrapper>
-                    <ItemWrapper>
-                        <Image src={catalog3} alt={"catalog-3"}/>
-                    </ItemWrapper>
-                    <ItemWrapper>
-                        <Image src={catalog4} alt={"catalog-4"}/>
-                    </ItemWrapper>
-                    <ItemWrapper>
-                        <Image src={catalog5} alt={"catalog-5"}/>
-                    </ItemWrapper>
-                    <ItemWrapper>
-                        <Image src={catalog6} alt={"catalog-6"}/>
-                    </ItemWrapper>
-                    <ItemWrapper>
-                        <Image src={catalog7} alt={"catalog-7"}/>
-                    </ItemWrapper>
-                    <ItemWrapper>
-                        <Image src={catalog8} alt={"catalog-8"}/>
-                    </ItemWrapper>
+                    <ExpandableImage small={catalog1} large={big_catalog1} alt={"Гидрооборудование платформы поворотной"} className={s.image_wrapper}/>
+                    <ExpandableImage small={catalog2} large={big_catalog2} alt={"Гидрооборудование рабочего оборудования"} className={s.image_wrapper}/>
+                    <ExpandableImage small={catalog3} large={big_catalog3} alt={"Гидрооборудование рабочего оборудования"} className={s.image_wrapper}/>
+                    <ExpandableImage small={catalog4} large={big_catalog4} alt={"Механизм ротации"} className={s.image_wrapper}/>
+                    <ExpandableImage small={catalog5} large={big_catalog5} alt={"Оборудование рабочее"} className={s.image_wrapper}/>
+                    <ExpandableImage small={catalog6} large={big_catalog6} alt={"Редуктор червячный"} className={s.image_wrapper}/>
+                    <ExpandableImage small={catalog7} large={big_catalog7} alt={"Стрела неподвижная"} className={s.image_wrapper}/>
+                    <ExpandableImage small={catalog8} large={big_catalog8} alt={"Стрела подвижная"} className={s.image_wrapper}/>
                 </CatalogWrapper>
             </Container>
         </StyledCatalog>
@@ -57,28 +51,4 @@ const CatalogWrapper = styled.div`
     grid-template-rows: repeat(2, 1fr);
     align-items: center;
     gap: 10px;
-`;
-
-const ItemWrapper = styled.div`
-    display: flex;
-    justify-content: center;
-    border-radius: 20px;
-    box-shadow: 2px 2px 100px 0 rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    cursor: pointer;
-    scale: 1;
-    
-    transition: scale 0.5s;
-    
-    &:hover {
-        scale: 1.2;
-        z-index: 1;
-        box-shadow: 2px 2px 30px 0 rgb(244, 137, 21, 0.7);
-    }
-`;
-
-const Image = styled.img`
-    height: 100%;
-    width: 100%;
-    
 `;
