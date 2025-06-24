@@ -1,9 +1,6 @@
-import React from 'react';
 import styled from "styled-components";
 import {Container} from "../../components/Container";
 import {HeaderMenu} from "./menuDesktop/DesktopMenu";
-// import {NameLogo} from "../../components/logo/NameLogo";
-import {MobileMenu} from "./menuMobile/MobileMenu";
 import {Theme} from "../../styles/Theme";
 
 export const Header = () => {
@@ -12,9 +9,7 @@ export const Header = () => {
         <StyledHeader>
             <Container>
                 <HeaderWrapper>
-                    {/*<NameLogo />*/}
                     <HeaderMenu />
-                    <MobileMenu />
                 </HeaderWrapper>
             </Container>
         </StyledHeader>

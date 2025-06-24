@@ -7,8 +7,9 @@ const StyledContacts = styled.section`
 
 const ContactsWrapper = styled.div`
     display: flex;
-    justify-content: space-around;
-    gap: 10px;
+    justify-content: space-between;
+    padding: 0 50px;
+    gap: 100px;
     
     @media ${Theme.media.tablet860} {
         justify-content: center;
@@ -19,6 +20,54 @@ const ContactsWrapper = styled.div`
     
     svg {
         position: relative;
+    }
+`;
+
+const ContactsInfoWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    
+    @media ${Theme.media.tablet860} {
+        gap: 20px
+    }
+`;
+
+const EmailWrapper = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 23px;
+`;
+
+const Phone = styled.a`
+    color: ${Theme.colors.font};
+    font-family: 'Exo 2', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0;
+`;
+
+const Email = styled.a`
+    color: ${Theme.colors.font};
+    font-family: 'Exo 2', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0;
+    
+    @media ${Theme.media.mobile} {
+        font-size: 16px;
+    }
+`;
+
+const WorkingHours = styled.p`
+    color: ${Theme.colors.font};
+    font-family: 'Exo 2', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0;
+    
+    @media ${Theme.media.mobile} {
+        font-size: 16px;
     }
 `;
 
@@ -46,7 +95,7 @@ const Field = styled.input`
     border: 2px solid rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     background-color: rgb(255, 255, 255);
-    padding: 28px 35px;
+    padding: 10px 35px;
 
     color: ${Theme.colors.font};
     font-family: Poppins, sans-serif;
@@ -70,5 +119,10 @@ export const S = {
     StyledContacts,
     ContactsWrapper,
     StyledForm,
-    Field
+    Field,
+    ContactsInfoWrapper,
+    EmailWrapper,
+    Phone,
+    Email,
+    WorkingHours
 }

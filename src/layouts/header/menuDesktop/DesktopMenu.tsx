@@ -1,14 +1,24 @@
-import React from 'react';
 import styled from "styled-components";
 import {v4 as uuid} from 'uuid';
-import {headerSocialIcons, headerMenuItems} from "../../../components/data"
-// import {HeaderSocialIcons} from "./HeaderSocialIcons";
+import {headerMenuItems} from "../../../components/data"
 import {Theme} from "../../../styles/Theme";
 import {Link} from "react-scroll"
+import {useEffect, useState} from "react";
 
 export const HeaderMenu = () => {
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 0);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     return (
-        <StyledNav>
+        <StyledNav className={isScrolled ? 'scrolled' : ''}>
             <List>
                 {headerMenuItems.map((item) => {
                     return (
@@ -19,23 +29,12 @@ export const HeaderMenu = () => {
                                 activeClass="active"
                                 spy={true}
                             >
-                                {item.title}
-                                <Mask>
-                                    <span>
-                                        {item.title}
-                                    </span>
-                                </Mask>
-                                <Mask>
-                                    <span>
-                                        {item.title}
-                                    </span>
-                                </Mask>
+                                <Mask>{item.title}</Mask>
                             </NavLink>
                         </ListItem>
                     )
                 })}
             </List>
-            {/*<HeaderSocialIcons iconItems={headerSocialIcons} />*/}
         </StyledNav>
     );
 };
@@ -47,6 +46,13 @@ const StyledNav = styled.nav`
     gap: 51px;
     height: 100%;
     width: 100%;
+    transition: backdrop-filter 0.5s ease;
+
+    &.scrolled {
+        backdrop-filter: blur(10px);
+        //background-color: rgba(255, 255, 255, 0.8);
+        -webkit-backdrop-filter: blur(10px);
+    }
 
     @media ${Theme.media.desktop1100} {
         justify-content: space-between;
@@ -72,23 +78,10 @@ const List = styled.ul`
 `;
 
 const Mask = styled.span`
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: inline-block;
-    height: 50%;
-    overflow: hidden;
+    position: relative;
     //outline: 1px solid red;
-    color: ${Theme.colors.mainTitle};
-    transition: ${Theme.animations.transition};
-    
-    & + & {
-        top: 50%;
-        span {
-            display: inline-block;
-            transform: translateY(-50%);
-        }
-    }
+    color: dodgerblue;
+    transition: 0.2s ease;
 `;
 
 const ListItem = styled.li`
@@ -107,13 +100,12 @@ const NavLink = styled(Link)`
         content: '';
         display: inline-block;
         height: 1px;
-        //background: linear-gradient(90deg, rgb(19, 176, 245), rgb(231, 15, 170));
-        background: ${Theme.colors.sectionTitle};
+        background: black;
         
         position: absolute;
-        top: 50%;
-        left: -10px;
-        right: -10px;
+        bottom: 0;
+        left: 0;
+        right: 0;
         z-index: 1;
         
         transform: scale(0);
@@ -130,14 +122,8 @@ const NavLink = styled(Link)`
         &::before {
             transform: scale(1);
         }
-
         ${Mask} {
-            transform: skewX(12deg) translateX(5px);
             color: ${Theme.colors.accent};
-
-            & + ${Mask} {
-                transform: skewX(12deg) translateX(-5px);
-            }
         }
     }
 `;

@@ -21,7 +21,7 @@ const FooterTopWrapper = styled.div`
         bottom: -2px;
         height: 2px;
         width: 100%;
-        background-image: linear-gradient(90deg, rgb(19, 176, 245), rgb(231, 15, 170));
+        background-color: dodgerblue;
     }
 `;
 

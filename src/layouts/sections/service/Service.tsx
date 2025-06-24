@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import styled from "styled-components";
 import {Container} from "../../../components/Container.ts";
 import rem1 from "../../../assets/images/services/rem.jpg";
@@ -9,9 +9,9 @@ import {SectionTitle} from "../../../components/SectionTitle.tsx";
 
 export const Service = () => {
     return (
-        <StyledService>
+        <StyledService id={"service"}>
             <Container>
-                <SectionTitle>УСЛУГИ</SectionTitle>
+                <SectionTitle>Услуги</SectionTitle>
                 <ServiceWrapper>
                     <Image src={rem2} alt={"rem2.jpg"}/>
                     <Description>

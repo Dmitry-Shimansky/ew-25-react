@@ -109,11 +109,11 @@ export const headerMenuItems: Array<{title: string, href: string}> = [
     },
     {
         title: "Услуги",
-        href: "techstack"
+        href: "service"
     },
     {
-        title: "Галерея",
-        href: "projects"
+        title: "Каталог",
+        href: "catalog"
     },
     {
         title: "Контакты",
