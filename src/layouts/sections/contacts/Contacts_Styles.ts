@@ -41,6 +41,7 @@ const EmailWrapper = styled.div`
 
 const Phone = styled.a`
     color: ${Theme.colors.font};
+    font-family: 'Exo 2', sans-serif;
     font-size: 20px;
     font-weight: 400;
     letter-spacing: 0;
@@ -48,6 +49,19 @@ const Phone = styled.a`
 
 const Email = styled.a`
     color: ${Theme.colors.font};
+    font-family: 'Exo 2', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0;
+    
+    @media ${Theme.media.mobile} {
+        font-size: 16px;
+    }
+`;
+
+const WorkingHours = styled.p`
+    color: ${Theme.colors.font};
+    font-family: 'Exo 2', sans-serif;
     font-size: 20px;
     font-weight: 400;
     letter-spacing: 0;
@@ -109,5 +123,6 @@ export const S = {
     ContactsInfoWrapper,
     EmailWrapper,
     Phone,
-    Email
+    Email,
+    WorkingHours
 }

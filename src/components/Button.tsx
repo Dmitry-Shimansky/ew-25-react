@@ -12,4 +12,9 @@ export const Button = styled.button`
     font-weight: 500;
     line-height: 22px;
     letter-spacing: 0;
+
+    &:active {
+        transform: scale(0.98);
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
 `;

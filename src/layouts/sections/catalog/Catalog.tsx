@@ -23,7 +23,7 @@ import s from "./Catalog.module.css";
 
 export const Catalog = () => {
     return (
-        <StyledCatalog>
+        <StyledCatalog id={"catalog"}>
             <Container>
                 <SectionTitle>Каталог</SectionTitle>
                 <CatalogWrapper>

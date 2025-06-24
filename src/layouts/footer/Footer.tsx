@@ -9,16 +9,6 @@ export const Footer = () => {
         <S.StyledFooter>
             <Container>
                 <S.FooterTopWrapper>
-                    {/*<S.ContactsWrapper>*/}
-                    {/*    <S.EmailWrapper>*/}
-                    {/*        <Icon iconId={'phone'} width={'29px'} height={'26px'} fill={'#000'}/>*/}
-                    {/*        <S.Phone href={'tel:+37063033732'}>+370-630-33732</S.Phone>*/}
-                    {/*    </S.EmailWrapper>*/}
-                    {/*    <S.EmailWrapper>*/}
-                    {/*        <Icon iconId={'email'} width={'29px'} height={'26px'} fill={'#000'}/>*/}
-                    {/*        <S.Email href={'mailto:shimansky.dmitry@gmail.com'}>shimansky.dmitry@gmail.com</S.Email>*/}
-                    {/*    </S.EmailWrapper>*/}
-                    {/*</S.ContactsWrapper>*/}
                     <S.SocialIconsList>
                         {footerSocialIcons.map(item => {
                             return (
@@ -36,7 +26,7 @@ export const Footer = () => {
                         © 2025 All rights reserved.
                     </S.Copyright>
                     <S.MadeBy>
-                        Designed and made by Dmitry Shimansky with Love & Coffee
+                        Designed and made by Love & Coffee
                     </S.MadeBy>
                 </S.FooterBottomWrapper>
             </Container>
