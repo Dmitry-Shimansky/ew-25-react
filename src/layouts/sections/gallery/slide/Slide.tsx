@@ -27,14 +27,29 @@ import image16 from "../../../../assets/images/gallery/picture-16.jpg"
 import image17 from "../../../../assets/images/gallery/picture-17.jpg"
 import image18 from "../../../../assets/images/gallery/picture-18.jpg"
 import image19 from "../../../../assets/images/gallery/picture-19.jpg"
+import {Catalog} from "../../catalog/Catalog.tsx";
 
-export const Slider = () => {
+export const Slider = ({screenWidth}: Catalog) => {
+
+    const changeSlidesPerWidth = () => {
+        if (screenWidth < 400) {
+            return 1;
+        } else if (screenWidth < 700) {
+            return 2;
+        } else if (screenWidth < 860) {
+           return 3;
+        } else if (screenWidth < 1100) {
+            return 4;
+        } else {
+            return 5;
+        }
+    }
 
     return (
         <SwiperElem
             modules={[Navigation, Pagination, Autoplay]}
             spaceBetween={35}
-            slidesPerView={5}
+            slidesPerView={changeSlidesPerWidth()}
             navigation
             autoplay={{delay: 1000, pauseOnMouseEnter: true}}
             pagination={{ clickable: true }}

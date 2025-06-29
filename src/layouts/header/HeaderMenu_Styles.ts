@@ -4,11 +4,11 @@ import {Link} from "react-scroll";
 
 const StyledHeader = styled.header`
         position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 999;
-    background-color: transparent;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 999;
+        background-color: transparent;
 
         @media ${Theme.media.mobile} {
                 display: none;
