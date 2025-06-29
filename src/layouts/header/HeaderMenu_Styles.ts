@@ -83,7 +83,7 @@ const NavLink = styled(Link)`
         background: dodgerblue;
         
         position: absolute;
-        bottom: 0;
+        bottom: -3px;
         left: 0;
         right: 0;
         z-index: 1;
