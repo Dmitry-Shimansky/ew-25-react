@@ -28,6 +28,7 @@ import image17 from "../../../../assets/images/gallery/picture-17.jpg"
 import image18 from "../../../../assets/images/gallery/picture-18.jpg"
 import image19 from "../../../../assets/images/gallery/picture-19.jpg"
 import {Catalog} from "../../catalog/Catalog.tsx";
+import {Theme} from "../../../../styles/Theme.ts";
 
 export const Slider = ({screenWidth}: Catalog) => {
 
@@ -37,7 +38,7 @@ export const Slider = ({screenWidth}: Catalog) => {
         } else if (screenWidth < 700) {
             return 2;
         } else if (screenWidth < 860) {
-           return 3;
+            return 3;
         } else if (screenWidth < 1100) {
             return 4;
         } else {
@@ -180,6 +181,10 @@ const SliderWrapper = styled.div`
     &:hover {
         box-shadow: 0 8px 15px rgb(244, 137, 21, 0.7);
         border-color: rgb(244, 137, 21, 0.7);
+    }
+
+    @media ${Theme.media.desktop1100} {
+        pointer-events: none;
     }
 `;
 

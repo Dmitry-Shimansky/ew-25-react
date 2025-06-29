@@ -70,9 +70,9 @@ const ListItem = styled.li`
 
 const NavLink = styled(Link)`
     color: transparent;
-    font-family: DM Sans, sans-serif;
-    font-size: 20px;
-    font-weight: 500;
+    font-family: 'Oswald', sans-serif;
+    font-size: 25px;
+    font-weight: 400;
     line-height: 26px;
     letter-spacing: 0;
 

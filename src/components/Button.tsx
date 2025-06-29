@@ -8,7 +8,7 @@ export const Button = styled.button`
     color: rgb(255, 255, 255);
     background-color: ${Theme.colors.accent};
     border-radius: 5px;
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 500;
     line-height: 22px;
     letter-spacing: 0;

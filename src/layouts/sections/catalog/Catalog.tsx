@@ -21,21 +21,12 @@ import {ExpandableImage} from "../../../components/ExpandableImage.tsx";
 import s from "./Catalog.module.css";
 import bg_image from "../../../assets/images/bg-1.jpg"
 import {Theme} from "../../../styles/Theme.ts";
-// import {useEffect, useState} from "react";
 
 export type Catalog = {
     screenWidth: number,
 }
 
 export const Catalog = ({screenWidth}: Catalog) => {
-
-    // const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-    //
-    // useEffect(() => {
-    //     const handleResize = () => setScreenWidth(window.innerWidth);
-    //     window.addEventListener('resize', handleResize);
-    //     return () => window.removeEventListener('resize', handleResize);
-    // }, []);
 
     const changeClass = ()=> {
         return screenWidth >= 1100 ? s.image_wrapper_desktop : s.image_wrapper_mobile;

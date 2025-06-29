@@ -32,12 +32,20 @@ const MainWrapper = styled.div`
     align-items: center;
     justify-content: space-around;
     min-height: 100%;
+
+    @media screen and (max-width: 650px) {
+        gap: 40px;
+    }
+
+    @media screen and (max-width: 450px) {
+        gap: 40px;
+    }
     
 `;
 
 const MainTitle = styled.h1`
     position: relative;
-    font-family: 'Source Sans 3', sans-serif;
+    font-family: 'Oswald', sans-serif;
     font-size: 42px;
     font-weight: 900;
     text-align: center;
@@ -53,33 +61,62 @@ const MainTitle = styled.h1`
         color: ${Theme.colors.accent};
     }
 
+    @media ${Theme.media.tablet860} {
+        font-weight: 500;
+    }
+
+    @media screen and (max-width: 550px) {
+        font-weight: 400;
+    }
+
+    @media screen and (max-width: 450px) {
+        font-size: 38px;
+        font-weight: 400;
+    }
+
     &::before {
         position: absolute;
         content: "";
         top: -10px;
-        left: 180px;
+        left: -10px;
         bottom: -10px;
-        right: 180px;
+        right: -10px;
         background-color: rgb(0, 0, 0, 0.5);
         border-radius: 30px;
         box-shadow: 0 0 40px rgb(0, 0, 0, 1);
-        z-index: -1
+        z-index: -1;
+
+        @media screen and (max-width: 1300px) {
+            left: 10px;
+            right: 10px;
+        }
+
+        @media ${Theme.media.tablet860} {
+            left: 0;
+            right: 0;
+        }
     }
 `;
 
 const ButtonWrapper = styled.div`
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 50px;
+
+    @media screen and (max-width: 450px) {
+        gap: 20px;
+    }
 `;
 
 const ButtonMain = styled(Button)`
     position: relative;
-    width: 152px;
+    width: 180px;
     height: 53px;
     color: rgb(255, 255, 255);
     background-color: ${Theme.colors.accent};
     border-radius: 5px;
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 500;
     line-height: 22px;
     letter-spacing: 0;
