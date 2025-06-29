@@ -1,21 +1,16 @@
-// import React from 'react';
-import styled from "styled-components";
 import {Container} from "../../../components/Container.ts";
 import {Slider} from "./slide/Slide.tsx";
 import {SectionTitle} from "../../../components/SectionTitle.tsx";
+import {S} from "./Gallery_Styles.ts"
 
 export const Gallery = () => {
     return (
-        <StyledGallery>
+        <S.StyledGallery>
             <Container>
                 <SectionTitle>Галерея</SectionTitle>
                 <Slider />
             </Container>
-        </StyledGallery>
+        </S.StyledGallery>
     )
 }
-
-const StyledGallery = styled.section`
-    height: 50vh;
-`;
 

@@ -23,12 +23,20 @@ const FooterTopWrapper = styled.div`
         width: 100%;
         background-color: dodgerblue;
     }
+
+    @media ${Theme.media.desktop1100} {
+        justify-content: center;
+    }
 `;
 
-const ContactsWrapper = styled.div`
+const ContactsInfoWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
     gap: 40px;
+
+    @media ${Theme.media.desktop1100} {
+        justify-content: center;
+    }
     
     @media ${Theme.media.tablet860} {
         gap: 20px
@@ -43,6 +51,7 @@ const EmailWrapper = styled.div`
 
 const Phone = styled.a`
     color: ${Theme.colors.font};
+    font-family: 'Exo 2', sans-serif;
     font-size: 20px;
     font-weight: 400;
     letter-spacing: 0;
@@ -50,6 +59,19 @@ const Phone = styled.a`
 
 const Email = styled.a`
     color: ${Theme.colors.font};
+    font-family: 'Exo 2', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0;
+
+    @media ${Theme.media.mobile} {
+        font-size: 16px;
+    }
+`;
+
+const WorkingHours = styled.p`
+    color: ${Theme.colors.font};
+    font-family: 'Exo 2', sans-serif;
     font-size: 20px;
     font-weight: 400;
     letter-spacing: 0;
@@ -96,10 +118,11 @@ const MadeBy = styled.small`
 export const S = {
     StyledFooter,
     FooterTopWrapper,
-    ContactsWrapper,
+    ContactsInfoWrapper,
     EmailWrapper,
     Phone,
     Email,
+    WorkingHours,
     FooterBottomWrapper,
     SocialIconsList,
     SocialIconItem,

@@ -7,7 +7,7 @@ export const Theme = {
         accent: "rgb(251, 168, 32)",
         // accent: "rgb(142, 202, 230)",
         // accent: "rgb(222, 24, 174)",
-        placeholder: "rgb(0, 0, 0 0.5)",
+        placeholder: "rgb(0, 0, 0, 0.5)",
         mainTitle: "rgb(255, 255, 255)",
 
         font: "rgb(102, 102, 102)",
