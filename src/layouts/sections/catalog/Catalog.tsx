@@ -1,4 +1,3 @@
-// import React from 'react';
 import styled from "styled-components";
 import {Container} from "../../../components/Container.ts";
 import {SectionTitle} from "../../../components/SectionTitle.tsx";
@@ -20,21 +19,32 @@ import big_catalog7 from "../../../assets/images/catalog/catalog-big/7.jpg"
 import big_catalog8 from "../../../assets/images/catalog/catalog-big/8.jpg"
 import {ExpandableImage} from "../../../components/ExpandableImage.tsx";
 import s from "./Catalog.module.css";
+import bg_image from "../../../assets/images/bg-1.jpg"
+import {Theme} from "../../../styles/Theme.ts";
 
-export const Catalog = () => {
+export type Catalog = {
+    screenWidth: number,
+}
+
+export const Catalog = ({screenWidth}: Catalog) => {
+
+    const changeClass = ()=> {
+        return screenWidth >= 1100 ? s.image_wrapper_desktop : s.image_wrapper_mobile;
+    }
+
     return (
         <StyledCatalog id={"catalog"}>
             <Container>
                 <SectionTitle>Каталог</SectionTitle>
                 <CatalogWrapper>
-                    <ExpandableImage small={catalog1} large={big_catalog1} alt={"Гидрооборудование платформы поворотной"} className={s.image_wrapper}/>
-                    <ExpandableImage small={catalog2} large={big_catalog2} alt={"Гидрооборудование рабочего оборудования"} className={s.image_wrapper}/>
-                    <ExpandableImage small={catalog3} large={big_catalog3} alt={"Гидрооборудование рабочего оборудования"} className={s.image_wrapper}/>
-                    <ExpandableImage small={catalog4} large={big_catalog4} alt={"Механизм ротации"} className={s.image_wrapper}/>
-                    <ExpandableImage small={catalog5} large={big_catalog5} alt={"Оборудование рабочее"} className={s.image_wrapper}/>
-                    <ExpandableImage small={catalog6} large={big_catalog6} alt={"Редуктор червячный"} className={s.image_wrapper}/>
-                    <ExpandableImage small={catalog7} large={big_catalog7} alt={"Стрела неподвижная"} className={s.image_wrapper}/>
-                    <ExpandableImage small={catalog8} large={big_catalog8} alt={"Стрела подвижная"} className={s.image_wrapper}/>
+                    <ExpandableImage small={catalog1} large={big_catalog1} alt={"Гидрооборудование платформы поворотной"} className={changeClass()}/>
+                    <ExpandableImage small={catalog2} large={big_catalog2} alt={"Гидрооборудование рабочего оборудования"} className={changeClass()}/>
+                    <ExpandableImage small={catalog3} large={big_catalog3} alt={"Гидрооборудование рабочего оборудования"} className={changeClass()}/>
+                    <ExpandableImage small={catalog4} large={big_catalog4} alt={"Механизм ротации"} className={changeClass()}/>
+                    <ExpandableImage small={catalog5} large={big_catalog5} alt={"Оборудование рабочее"} className={changeClass()}/>
+                    <ExpandableImage small={catalog6} large={big_catalog6} alt={"Редуктор червячный"} className={changeClass()}/>
+                    <ExpandableImage small={catalog7} large={big_catalog7} alt={"Стрела неподвижная"} className={changeClass()}/>
+                    <ExpandableImage small={catalog8} large={big_catalog8} alt={"Стрела подвижная"} className={changeClass()}/>
                 </CatalogWrapper>
             </Container>
         </StyledCatalog>
@@ -42,7 +52,11 @@ export const Catalog = () => {
 }
 
 const StyledCatalog = styled.section`
-
+    position: relative;
+    background-image: url(${bg_image});
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 `;
 
 const CatalogWrapper = styled.div`
@@ -51,4 +65,19 @@ const CatalogWrapper = styled.div`
     grid-template-rows: repeat(2, 1fr);
     align-items: center;
     gap: 10px;
+
+    @media ${Theme.media.desktop1100} {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    @media ${Theme.media.tablet860} {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+    }
+    
+    @media ${Theme.media.mobile} {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(8, 1fr);
+    }
 `;

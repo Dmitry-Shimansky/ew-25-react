@@ -51,7 +51,7 @@ export const GlobalStyle = createGlobalStyle`
     section:nth-of-type(even) {
         background-color: ${Theme.colors.secondaryBg};
     }
-    
+
     .Toastify {
         padding: 0;
     }

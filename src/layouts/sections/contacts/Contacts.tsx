@@ -2,11 +2,9 @@ import {ElementRef, useRef} from 'react';
 import {SectionTitle} from "../../../components/SectionTitle";
 import {SectionDescription} from "../../../components/SectionDescription";
 import {Button} from "../../../components/Button";
-import {Icon} from "../../../components/icon/Icon";
 import {Container} from "../../../components/Container";
 import {S} from "./Contacts_Styles";
-import {Theme} from "../../../styles/Theme.ts";
-// import {toast} from "react-toastify";
+import {toast} from "react-toastify";
 
 const escapeHtml = (text: string) => {
     const map: any = {
@@ -27,7 +25,7 @@ export const Contacts = () => {
 
     const form = useRef<ElementRef<'form'>>(null);
 
-    const sendEmail = async (e: any) => {
+    const sendMessage = async (e: any) => {
         e.preventDefault();
 
         if (!form.current) return;
@@ -55,17 +53,18 @@ export const Contacts = () => {
                 }),
             });
 
+            // const result = await response.json();
+            // console.log('SUCCESS!', result);
+
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             } else {
-                // const result = await response.json();
-                // console.log('SUCCESS!', result);
-                // toast.success(`Message was sent successfully !`);
+                toast.success(`Заявка отправлена !`);
                 e.target.reset();
             }
         } catch (error) {
             console.error("FAILED...", error);
-            // toast.error(`Message was NOT sent. Please try again.`);
+            toast.error(`Заявка не отправлена. Попробуйте еще раз`);
         }
     };
 
@@ -75,25 +74,11 @@ export const Contacts = () => {
                 <SectionTitle>Контакты</SectionTitle>
                 <SectionDescription>Остались вопросы ?<br/> Будем рады на них ответить!</SectionDescription>
                 <S.ContactsWrapper >
-                    <S.ContactsInfoWrapper>
-                        <S.EmailWrapper>
-                            <Icon iconId={'phone'} width={'29px'} height={'26px'} fill={Theme.colors.accent}/>
-                            <S.Phone href={'tel:+79605557788'}>+7 (960) 555-77-88</S.Phone>
-                        </S.EmailWrapper>
-                        <S.EmailWrapper>
-                            <Icon iconId={'email'} width={'29px'} height={'26px'} fill={Theme.colors.accent}/>
-                            <S.Email href={'mailto:gusi.Lebedi@gmail.com'}>gusi.Lebedi@gmail.com</S.Email>
-                        </S.EmailWrapper>
-                        <S.EmailWrapper>
-                            <Icon iconId={'working-hours'} width={'29px'} height={'26px'} fill={Theme.colors.accent}/>
-                            <S.WorkingHours>Пн.-Пт: 8:00 - 20:00 Сб: 10:00 - 18:00</S.WorkingHours>
-                        </S.EmailWrapper>
-                    </S.ContactsInfoWrapper>
-                    <S.StyledForm ref={form} onSubmit={sendEmail}>
-                        <S.Field required placeholder={'Имя'} name={'user_name'}/>
-                        <S.Field required placeholder={'email'} name={'user_email'}/>
-                        <S.Field required placeholder={'телефон'} name={'user_phone'}/>
-                        <S.Field placeholder={'Сообшение'} as={"textarea"} name={'message'}/>
+                    <S.StyledForm ref={form} onSubmit={sendMessage}>
+                        <S.Field required placeholder={'имя'} name={'user_name'} maxLength={40}/>
+                        <S.Field required placeholder={'email'} name={'user_email'} maxLength={40} autoComplete={'off'}/>
+                        <S.Field required placeholder={'телефон'} name={'user_phone'} maxLength={20}/>
+                        <S.Field placeholder={'Сообшение'} as={"textarea"} name={'message'} maxLength={1000}/>
                         <Button type={'submit'}>Отправить</Button>
                     </S.StyledForm>
                 </S.ContactsWrapper>

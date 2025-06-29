@@ -1,21 +1,17 @@
-// import React from 'react';
-import styled from "styled-components";
 import {Container} from "../../../components/Container.ts";
 import {Slider} from "./slide/Slide.tsx";
 import {SectionTitle} from "../../../components/SectionTitle.tsx";
+import {S} from "./Gallery_Styles.ts"
+import {Catalog} from "../catalog/Catalog.tsx";
 
-export const Gallery = () => {
+export const Gallery = ({screenWidth}: Catalog) => {
     return (
-        <StyledGallery>
+        <S.StyledGallery>
             <Container>
                 <SectionTitle>Галерея</SectionTitle>
-                <Slider />
+                <Slider screenWidth={screenWidth}/>
             </Container>
-        </StyledGallery>
+        </S.StyledGallery>
     )
 }
-
-const StyledGallery = styled.section`
-    height: 50vh;
-`;
 
