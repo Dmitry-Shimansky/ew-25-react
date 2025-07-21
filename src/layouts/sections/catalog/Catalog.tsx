@@ -81,7 +81,3 @@ const CatalogWrapper = styled.div`
         grid-template-rows: repeat(8, 1fr);
     }
 `;
-
-const ExpandableWrapper = styled.div`
-
-`;
