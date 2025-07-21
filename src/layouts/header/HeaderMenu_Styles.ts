@@ -10,9 +10,9 @@ const StyledHeader = styled.header`
         z-index: 999;
         background-color: transparent;
 
-        @media ${Theme.media.mobile} {
-                display: none;
-        }
+        // @media ${Theme.media.mobile} {
+        //         display: none;
+        // }
 `;
 
 const HeaderWrapper = styled.div`
@@ -75,6 +75,7 @@ const NavLink = styled(Link)`
     font-weight: 400;
     line-height: 26px;
     letter-spacing: 0;
+        
 
     &::before {
         content: '';

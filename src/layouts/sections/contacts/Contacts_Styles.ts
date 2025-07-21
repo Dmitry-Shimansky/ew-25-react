@@ -8,17 +8,6 @@ const StyledContacts = styled.section`
 const ContactsWrapper = styled.div`
     display: flex;
     justify-content: center;
-    
-    @media ${Theme.media.tablet860} {
-        justify-content: center;
-        svg {
-            display: none;
-        }
-    }
-    
-    svg {
-        position: relative;
-    }
 `;
 
 const StyledForm = styled.form`
@@ -32,10 +21,6 @@ const StyledForm = styled.form`
     textarea {
         resize: none;
         height: 318px;
-    }
-
-    @media ${Theme.media.tablet860} {
-        align-items: center;
     }
 `;
 

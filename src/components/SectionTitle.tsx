@@ -4,7 +4,7 @@ import {font} from "../styles/Common";
 
 
 export const SectionTitle = styled.h2`
-    ${font({family: 'Exo 2', weight: 400, Fmax: 35, Fmin: 20})}
+    ${font({family: 'Exo 2', weight: 400, Fmax: 38, Fmin: 30})}
     
     color: ${Theme.colors.sectionTitle};
     letter-spacing: 0;

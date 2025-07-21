@@ -33,8 +33,8 @@ import {Theme} from "../../../../styles/Theme.ts";
 export const Slider = ({screenWidth}: Catalog) => {
 
     const changeSlidesPerWidth = () => {
-        if (screenWidth < 400) {
-            return 1;
+        if (screenWidth < 450) {
+            return 2;
         } else if (screenWidth < 700) {
             return 2;
         } else if (screenWidth < 860) {
@@ -152,6 +152,7 @@ export const Slider = ({screenWidth}: Catalog) => {
 }
 
 const SwiperElem = styled(Swiper)`
+    
     &.swiper {
         padding: 0 35px 25px 35px
     }
@@ -167,10 +168,15 @@ const SwiperElem = styled(Swiper)`
     &.swiper-horizontal > .swiper-pagination-bullets {
         bottom: -3px;
     }
+
+    // @media ${Theme.media.mobile} {
+    //     height: 170px;
+    // }
 `;
 
 const SliderWrapper = styled.div`
     max-width: 100%;
+    max-height: 100%;
     overflow: hidden;
     position: relative;
     border-top: 1px solid #e0e0e0;
@@ -190,7 +196,7 @@ const SliderWrapper = styled.div`
 
 const Slide = styled.img`
     max-width: 100%;
-    height: 100%;
+    max-height: 100%;
     display: block;
     object-fit: cover;
 `;

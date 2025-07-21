@@ -2,6 +2,7 @@ import styled from "styled-components";
 import main from "../../../assets/images/main.jpg";
 import {Theme} from "../../../styles/Theme.ts";
 import {Button} from "react-scroll";
+import {font} from "../../../styles/Common.ts";
 
 const StyledMain = styled.section`
     position: relative;
@@ -9,7 +10,11 @@ const StyledMain = styled.section`
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 50vh;
+    min-height: 50vh;
+
+    @media ${Theme.media.desktop1100} {
+        min-height: 100%;
+    }
     
     &::before {
         position: absolute;
@@ -21,9 +26,9 @@ const StyledMain = styled.section`
         background-color: rgb(0, 0, 0, 0.65);
     }
     
-    & > div {
-      height: 100%;  
-    }
+    //& > div {
+    //  height: 100%;  
+    //}
 `;
 
 const MainWrapper = styled.div`
@@ -32,24 +37,24 @@ const MainWrapper = styled.div`
     align-items: center;
     justify-content: space-around;
     min-height: 100%;
+    gap: 55px;
+    padding-top: 6%;
 
-    @media screen and (max-width: 650px) {
+    @media ${Theme.media.mobile} {
         gap: 40px;
     }
-
-    @media screen and (max-width: 450px) {
-        gap: 40px;
-    }
-    
 `;
 
 const MainTitle = styled.h1`
+    ${font({family: 'Oswald', weight: 900, Fmax: 42, Fmin: 30})}
+    
     position: relative;
-    font-family: 'Oswald', sans-serif;
-    font-size: 42px;
-    font-weight: 900;
+    //font-family: 'Oswald', sans-serif;
+    //font-size: 42px;
+    //font-weight: 900;
     text-align: center;
     text-transform: uppercase;
+    line-height: normal;
     color: ${Theme.colors.mainTitle};
     z-index: 1;
     
@@ -61,16 +66,7 @@ const MainTitle = styled.h1`
         color: ${Theme.colors.accent};
     }
 
-    @media ${Theme.media.tablet860} {
-        font-weight: 500;
-    }
-
-    @media screen and (max-width: 550px) {
-        font-weight: 400;
-    }
-
-    @media screen and (max-width: 450px) {
-        font-size: 38px;
+    @media ${Theme.media.mobile} {
         font-weight: 400;
     }
 
@@ -94,6 +90,10 @@ const MainTitle = styled.h1`
         @media ${Theme.media.tablet860} {
             left: 0;
             right: 0;
+        }
+
+        @media ${Theme.media.mobile} {
+            display: none;
         }
     }
 `;
@@ -130,6 +130,11 @@ const ButtonMain = styled(Button)`
     &:hover {
         box-shadow: 0 0 10px dodgerblue, 0 0 20px dodgerblue;
         text-shadow: 0 0 5px white;
+    }
+
+    @media ${Theme.media.mobile} {
+        font-size: 18px;
+        width: 162px;
     }
 `;
 

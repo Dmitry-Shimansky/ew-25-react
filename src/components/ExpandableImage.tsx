@@ -14,7 +14,7 @@ export const ExpandableImage = ({ small, large, alt, className }: ExpandableImag
             large={large}
             alt={alt}
             hideDownload={true}
-            hideZoom={true}
+            hideZoom={false}
             className={className}
         />
     );
